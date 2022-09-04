@@ -19,6 +19,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style/style.css" />
+    <script defer src="./index.js"></script>
     <title>Frontend Mentor | Huddle landing page with curved sections</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -79,7 +80,7 @@
     </header>
     <main class="main">
       <section class="about">
-        <img src="./images/bg-section-top-desktop-1.svg" alt="" class="top" />
+        <!-- <img src="./images/bg-section-top-desktop-1.svg" alt="" class="top" /> -->
         <div class="about__info bg">
           <div class="about__text">
             <h1 class="header-primary">Grow Together</h1>
@@ -174,7 +175,12 @@
               address
             </p>
             <form class="footer__form">
-              <input type="text" class="footer__input" />
+              <div class="input">
+                <input type="text" class="footer__input" id="email" />
+                <label for="email" class="email label hidden"
+                  >Check your email please</label
+                >
+              </div>
               <button class="btn footer__btn">Subscribe</button>
             </form>
           </div>

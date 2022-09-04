@@ -26,6 +26,33 @@
   font-family: "Open-Sans-7";
   src: url(../Fonts/Open_Sans/static/OpenSans/OpenSans-Bold.ttf);
 }
+@mixin respond($breakpoint) {
+  @if ($breakpoint == tab-land) {
+    @media screen and (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-port-large) {
+    @media screen and (max-width: 909px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-port-small) {
+    @media screen and (max-width: 909px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == phone-large) {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == phone-small) {
+    @media screen and (max-width: 375px) {
+      @content;
+    }
+  }
+}
 
 //Reset
 *,
@@ -154,6 +181,7 @@ ul {
 .main {
   margin-block-end: 10rem;
 }
+
 .bg {
   background-color: #f6fbff;
 }
@@ -212,6 +240,7 @@ ul {
     }
     .parag {
       color: #fff;
+      font-family: "Open-Sans-4";
       &.width {
         width: 68%;
       }
@@ -240,13 +269,22 @@ ul {
   }
   &__form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 3rem;
+    font-family: "Open-Sans-4";
   }
   &__input {
     padding-block: 1rem;
+    padding-inline: 1rem;
     border-radius: 5px;
-    width: 50%;
+
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Open-Sans-6";
+    &:focus {
+      outline: none;
+      padding-inline: 1rem;
+    }
   }
   &__btn {
     padding: 1rem 3rem;
@@ -258,5 +296,159 @@ ul {
     display: flex;
     margin-top: 3rem;
     gap: 2rem;
+  }
+}
+.icon {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  &:hover {
+    color: rgb(83, 170, 232);
+  }
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.email {
+  color: rgb(167, 21, 21);
+  font-family: "Open-Sans-4";
+}
+.hidden {
+  display: none;
+}
+.red {
+  border: 3px rgb(167, 21, 21) solid;
+}
+@include respond(tab-land) {
+  .footer {
+    &__form {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    &__input {
+      width: 100%;
+    }
+  }
+}
+
+@include respond(tab-port-large) {
+  .header-primary {
+    font-size: 2rem;
+  }
+  .width {
+    width: 72%;
+  }
+  .followers {
+    &__header {
+      font-size: 4rem;
+    }
+  }
+}
+@include respond(tab-port-small) {
+  .header-primary {
+    font-size: 1.7rem;
+  }
+  .about {
+    &__info {
+      padding: 2rem 1rem;
+    }
+  }
+  .footer {
+    &__container {
+      padding: 2rem;
+    }
+    .newsletter {
+      gap: 1rem;
+    }
+    &__content {
+      .parag.width {
+        width: 80%;
+      }
+    }
+    &__icons {
+      font-size: 2rem;
+    }
+  }
+}
+@include respond(phone-large) {
+  .header {
+    padding-inline: 1rem;
+    &__nav {
+      & > * {
+        flex: 1;
+      }
+    }
+    &__btn {
+      display: flex;
+      justify-content: end;
+    }
+  }
+  .header-primary {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .trend {
+    flex-direction: column;
+  }
+  .btn {
+    padding: 17px 49px;
+    font-size: 15px;
+  }
+  .about {
+    &__info {
+      display: grid;
+      grid-template-columns: 100%;
+    }
+    &__text {
+      text-align: center;
+      gap: 1rem;
+      align-items: center;
+      .parag {
+        width: 80%;
+      }
+    }
+    &__img {
+      display: flex;
+      justify-content: center;
+      grid-row: 1/2;
+      img {
+        width: 59%;
+      }
+    }
+  }
+  .footer {
+    &__content {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+    &__about {
+      gap: 1rem;
+    }
+    &__form {
+      align-items: flex-end;
+    }
+    &__logo {
+      width: 46vw;
+    }
+  }
+}
+@include respond(phone-small) {
+  .about {
+    &__info {
+      gap: 2rem;
+    }
+    &__text {
+      .parag {
+        width: 100%;
+      }
+    }
+
+    &__img {
+      img {
+        width: 80%;
+      }
+    }
   }
 }
