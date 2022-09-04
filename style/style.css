@@ -184,6 +184,9 @@ ul {
 .about__text .parag {
   width: 90%;
 }
+.about__img img {
+  width: 83%;
+}
 
 .gap {
   gap: 2rem;
