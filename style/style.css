@@ -100,7 +100,7 @@ ul {
 }
 
 .header {
-  padding: 2rem 2rem;
+  padding: 8rem 2rem;
   margin-bottom: 6rem;
 }
 .header__nav {
@@ -138,7 +138,7 @@ ul {
   width: 3rem;
 }
 .followers__header {
-  font-family: "Poppins";
+  font-family: "Open-Sans-7";
   font-size: 6rem;
   display: flex;
   flex-direction: column;
@@ -340,6 +340,7 @@ ul {
 @media screen and (max-width: 600px) {
   .header {
     padding-inline: 1rem;
+    padding-top: 2rem;
   }
   .header__nav > * {
     flex: 1;

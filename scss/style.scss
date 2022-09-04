@@ -126,7 +126,7 @@ ul {
 }
 //Header
 .header {
-  padding: 2rem 2rem;
+  padding: 8rem 2rem;
   margin-bottom: 6rem;
 
   &__nav {
@@ -164,7 +164,7 @@ ul {
     width: 3rem;
   }
   &__header {
-    font-family: "Poppins";
+    font-family: "Open-Sans-7";
     font-size: 6rem;
     display: flex;
     flex-direction: column;
@@ -375,6 +375,7 @@ ul {
 @include respond(phone-large) {
   .header {
     padding-inline: 1rem;
+    padding-top: 2rem;
     &__nav {
       & > * {
         flex: 1;
